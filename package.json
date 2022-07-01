@@ -6,6 +6,6 @@
     "validate": "lint-openapi index.yml -jnp -c validate.json"
   },
   "dependencies": {
-    "ibm-openapi-validator": "0.51.3"
+    "ibm-openapi-validator": "0.81.0"
   }
 }
