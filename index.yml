@@ -1,0 +1,30 @@
+openapi: "3.0.0"
+
+info:
+  version: 0.0.0
+  title: example api
+  license:
+    name: UNLICENSED
+
+servers:
+  - url: https://example.com/visits/v{major}
+    variables:
+      major:
+        default: "0"
+        description: API major version number
+
+tags:
+  - name: Example
+    description: Example Operations
+
+paths:
+  /:
+    get:
+      tags: 
+        - Example
+      operationId: getExample
+      summary: "Return array of visits"
+      description: "get all visits from db"
+      responses:
+        "200":
+          $ref: "./models/visits.yml#/components/responses/visitItemListResponse"

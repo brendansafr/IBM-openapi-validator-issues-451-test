@@ -1,0 +1,43 @@
+components:
+  responses:
+    visitItemListResponse:
+      description: "Visitor Visit List"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/visitItemList"
+
+  schemas:
+    visitItemList:
+      description: "Visit Item List"
+      type: array
+      nullable: false
+      items:
+        $ref: "#/components/schemas/visitItem"
+      example:
+        - $ref: "#/components/schemas/visitItem/example"
+
+    visitItem:
+      description: "Visit Item"
+      type: object
+      nullable: false
+      required:
+        - id
+        - signin
+      properties:
+        id:
+          description: id number
+          type: integer
+          nullable: false
+          example: 1
+        signin:
+          description: sign in timestamp
+          type: string
+          format: date-time
+          nullable: false
+          example: "2022-01-01T00:00:00Z"
+      example:
+        id: 
+          $ref: "#/components/schemas/visitItem/properties/id/example"
+        signin: 
+          $ref: "#/components/schemas/visitItem/properties/signin/example"
